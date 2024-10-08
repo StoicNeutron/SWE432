@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIRLYPOPS</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="navbar">
         <h3>GIRLYPOPS</h3>
@@ -14,22 +16,90 @@
     <div class="main_content">
         <div class="left_content">
             <div class="now_playing">
-                Now Playing
+                <h4>Now Playing</h4>
+                <p style="margin-left: 20px;">Expresso - Sabrina Carpenter</p>
+                <p><b>Queue:</b></p>
+                <div style="margin-left: 20px;">
+                    <ol style="list-style: none;">
+                        <li style="color:grey">Reckless - Madison Beer</li>
+                        <li style="color:grey">Dandelion - Ruth B.</li>
+                        <li style="color:grey"><a href="">...</a></li>
+                    </ol>
+                </div>
             </div>
             <div class="scheduler">
-                Scheduler
+                <h4>Scheduler</h4>
+                <form action="/submit" method="POST">
+                    <!-- DJ Name Dropdown -->
+                    <label for="dj-name">Select DJ Name:</label>
+                    <select id="dj-name" name="dj-name" required>
+                        <option value="">-- Select a DJ --</option>
+                        <option value="dj-zayn">DJ Zayn</option>
+                        <option value="dj-camila">DJ Camila</option>
+                        <option value="dj-marshmello">DJ Marshmello</option>
+                        <option value="dj-khaled">DJ Khaled</option>
+                    </select>
+
+                    <!-- Date Entry Fields -->
+                    <label for="date">Select Date:</label>
+                    <div class="date-container">
+                        <select id="month" name="month" required>
+                            <option value="">Month</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+
+                        <input type="number" id="day" name="day" min="1" max="31" placeholder="Day" required>
+
+                        <input type="number" id="year" name="year" min="2023" placeholder="Year" required>
+                    </div>
+
+                    <!-- Time Period Range -->
+                    <label for="time-range">Select Time Period:</label>
+                    <div class="time-container">
+                        <input type="time" id="start-time" name="start-time" required>
+                        <input type="time" id="end-time" name="end-time" required>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit">Submit</button>
+                </form>
             </div>
             <div class="report">
-                Report
+                <h4>Report</h4>
+                <table class="report_profiles">
+                    <tr>
+                        <td class="report_profile_img"><img src="resources/profile.png"></td>
+                        <td class="report_profile_img"><img src="resources/profile.png"></td>
+                        <td class="report_profile_img"><img src="resources/profile.png"></td>
+                        <td class="report_profile_img"><img src="resources/profile.png"></td>
+                        <td class="report_profile_img"><img src="resources/profile.png"></td>
+                    </tr>
+                </table>
+                <div></div>
             </div>
         </div>
         <div class="right_content">
-            <p>Username</p>
+            <div class="profile_content">
+                <img src="resources/profile.png" style="width: 60px; height: 60px; margin-left: 20px;">
+                <h4>USERNAME</h4>
+            </div>
         </div>
     </div>
 
     <div class="footer">
-        <p>Privacy Policy | Copyright © 2024 GIRLYPOPS | Terms and Conditions</p>
+        <p><a href="">Privacy Policy</a> | Copyright © 2024 GIRLYPOPS | <a>Terms and Conditions</a></p>
     </div>
 </body>
+
 </html>
