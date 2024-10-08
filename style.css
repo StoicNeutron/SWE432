@@ -1,0 +1,67 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: #C8C7D5;
+    padding: 3px;
+    text-align: center;
+    color: black;
+    flex: 0 0 20px;
+    margin-bottom: 3px;
+}
+
+.main_content {
+    display: flex;
+    flex: 1;
+}
+
+.left_content {
+    background-color: #33FF57;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.left_content > div {
+    flex: 1;
+    display: flex;
+    color: black;
+    font-size: 18px;
+}
+
+.now_playing {
+    background-color: #D9E3EC;
+    padding: 10px;
+}
+
+.scheduler {
+    background-color: #EDECF3;
+    padding: 10px;
+}
+
+.report {
+    background-color: #D9E3EC;
+    padding: 10px;
+}
+
+.right_content {
+    background-color: #C8C7D5;
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.footer {
+    background-color: #EDECF3;
+    padding: 20px;
+    text-align: center;
+    color: black;
+    flex: 0 0 30px;
+}
