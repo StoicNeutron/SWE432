@@ -37,16 +37,33 @@ html, body {
 .now_playing {
     background-color: #D9E3EC;
     padding: 10px;
+    flex-direction: column;
 }
 
 .scheduler {
     background-color: #EDECF3;
     padding: 10px;
+    flex-direction: column;
+}
+
+form {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
 }
 
 .report {
     background-color: #D9E3EC;
     padding: 10px;
+}
+
+.report_profile_img img{
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
 }
 
 .right_content {
@@ -58,10 +75,25 @@ html, body {
     font-size: 18px;
 }
 
+.profile_content {
+    flex-direction: column;
+    justify-content: center;
+}
+
 .footer {
     background-color: #EDECF3;
     padding: 20px;
     text-align: center;
     color: black;
     flex: 0 0 30px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
 }
