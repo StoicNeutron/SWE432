@@ -1,4 +1,17 @@
-html, body {
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+    /* fix for Chrome */
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: InterVariable, sans-serif;
+    }
+}
+
+html,
+body {
     height: 100%;
     margin: 0;
     display: flex;
@@ -7,11 +20,15 @@ html, body {
 
 .navbar {
     background-color: #C8C7D5;
-    padding: 3px;
-    text-align: center;
-    color: black;
-    flex: 0 0 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     margin-bottom: 3px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    text-size-adjust: 20px;
+    color: black;
 }
 
 .main_content {
@@ -25,9 +42,10 @@ html, body {
     display: flex;
     flex-direction: column;
     padding: 0;
+    overflow-y: auto;
 }
 
-.left_content > div {
+.left_content>div {
     flex: 1;
     display: flex;
     color: black;
@@ -36,14 +54,69 @@ html, body {
 
 .now_playing {
     background-color: #D9E3EC;
-    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
     flex-direction: column;
 }
 
+.now_playing_elements {
+    display: flex;
+    justify-items: center;
+}
+
+#playButton {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#buttonImage {
+    width: 25px;
+    height: auto;
+    margin-right: 5px;
+    transition: transform 0.2s ease; /* Smooth animation */
+}
+
+#playButton:hover #buttonImage {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+#playButton:active #buttonImage {
+    transform: scale(0.9); /* Slight shrink on click */
+}
+
+
 .scheduler {
     background-color: #EDECF3;
-    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
     flex-direction: column;
+}
+
+.scheduler_elements {
+    display: flex;
+    background-color: white;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.scheduler_elements2 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.scheduler_buttons {
+    margin-top: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    border-width: 0px;
+    background-color: #C8C7D5;
+    margin-right: 20px;
+}
+
+.scheduler_buttons:hover{
+    background-color: #D9E3EC;
 }
 
 form {
@@ -57,13 +130,41 @@ form {
 
 .report {
     background-color: #D9E3EC;
-    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    flex-direction: column;
 }
 
-.report_profile_img img{
+.report_elements {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.report_info {
+    margin: 5px;
+    background-color: #EDECF3;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.profile_picker img {
     width: 40px;
-    height: auto;
+    margin-top: 10px;
+    height: 40px;
     margin-right: 10px;
+    justify-items: center;
+    transition: all 0.3s ease;
+}
+
+.profile_picker img:hover{
+    border-radius: 40px;
+    margin-top: 0px;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+    justify-items: center;
 }
 
 .right_content {

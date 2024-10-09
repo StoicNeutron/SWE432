@@ -6,87 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIRLYPOPS</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="resources/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!--Flatpickr: for calendar input library-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <div class="navbar">
-        <h3>GIRLYPOPS</h3>
+        <a href=""><img src="resources/logo.png" style="height: 30px; width: auto;"></a>
     </div>
 
     <div class="main_content">
         <div class="left_content">
             <div class="now_playing">
                 <h4>Now Playing</h4>
-                <p style="margin-left: 20px;">Expresso - Sabrina Carpenter</p>
-                <p><b>Queue:</b></p>
-                <div style="margin-left: 20px;">
-                    <ol style="list-style: none;">
-                        <li style="color:grey">Reckless - Madison Beer</li>
-                        <li style="color:grey">Dandelion - Ruth B.</li>
-                        <li style="color:grey"><a href="">...</a></li>
-                    </ol>
+                <div class="now_playing_elements">
+                    <button id="playButton">
+                        <img id="buttonImage" src="resources/play.png" alt="Play/Pause Button">
+                    </button>
+                    <audio id="audioPlayer" autoplay loop>
+                        <source src="resources/expresso.mp3" type="audio/mpeg">
+                    </audio>
+                    <p>Expresso - Sabrina Carpenter</p>
+                    <img id="sound_animated" src="" style="height: 30px; width:auto; margin-left: 10px; margin-top: 13px">
                 </div>
+                <hr style="border: 0.5px solid black; width: 80%; margin: 20px 0;">
+                <p><b>Queue:</b></p>
+                <ol id="songList" style="list-style: none;">
+                    <li style="color:grey">Reckless - Madison Beer</li>
+                    <li style="color:grey">Dandelion - Ruth B.</li>
+                    <li id="expandList" style="color:grey; cursor: pointer;"><a href="javascript:void(0);">more...</a></li>
+                </ol>                
             </div>
             <div class="scheduler">
                 <h4>Scheduler</h4>
-                <form action="/submit" method="POST">
-                    <!-- DJ Name Dropdown -->
-                    <label for="dj-name">Select DJ Name:</label>
-                    <select id="dj-name" name="dj-name" required>
-                        <option value="">-- Select a DJ --</option>
-                        <option value="dj-zayn">DJ Zayn</option>
-                        <option value="dj-camila">DJ Camila</option>
-                        <option value="dj-marshmello">DJ Marshmello</option>
-                        <option value="dj-khaled">DJ Khaled</option>
-                    </select>
-
-                    <!-- Date Entry Fields -->
-                    <label for="date">Select Date:</label>
-                    <div class="date-container">
-                        <select id="month" name="month" required>
-                            <option value="">Month</option>
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
-
-                        <input type="number" id="day" name="day" min="1" max="31" placeholder="Day" required>
-
-                        <input type="number" id="year" name="year" min="2023" placeholder="Year" required>
+                <div class="scheduler_elements">
+                    <div style="flex-direction: column;">
+                        <input type="text" id="myCalendar" placeholder="Select a date">
                     </div>
-
-                    <!-- Time Period Range -->
-                    <label for="time-range">Select Time Period:</label>
-                    <div class="time-container">
-                        <input type="time" id="start-time" name="start-time" required>
-                        <input type="time" id="end-time" name="end-time" required>
+                    <div class="scheduler_elements2">
+                        <p style="font-size: 15px;">Select DJ:</p>
+                        <div class="profile_picker">
+                            <button style="border: none; background-color: transparent; cursor: pointer;">
+                                <img src="resources/profile1.png" alt="profile picture">
+                            </button>
+                            <button style="border: none; background-color: transparent; cursor: pointer;">
+                                <img src="resources/profile2.png" alt="profile picture">
+                            </button>
+                            <button style="border: none; background-color: transparent; cursor: pointer;">
+                                <img src="resources/profile3.png" alt="profile picture">
+                            </button>
+                            <button style="border: none; background-color: transparent; cursor: pointer;">
+                                <img src="resources/profile4.png" alt="profile picture">
+                            </button>
+                            <button style="border: none; background-color: transparent; cursor: pointer;">
+                                <img src="resources/profile5.png" alt="profile picture">
+                            </button>
+                        </div>
+                        <div class="DJ_info">
+                            <table style="font-size: 15px;margin-top: 40px;">
+                                <tr>
+                                    <td>Name</td>
+                                    <td>: Sayato</td>
+                                </tr>
+                                <tr>
+                                    <td>Experience</td>
+                                    <td>: 5 years</td>
+                                </tr>
+                                <tr>
+                                    <td>Rated</td>
+                                    <td>: 5/5 stars</td>
+                                </tr>
+                                <tr>
+                                    <td>Assigned Date</td>
+                                    <td>: Mon(13); Tue(14); Wed(15)</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <button class="scheduler_buttons" type="button" onclick="">RESET</button>
+                        <button class="scheduler_buttons" type="button" onclick="">CONFIRM</button>
                     </div>
+                </div>
 
-                    <!-- Submit Button -->
-                    <button type="submit">Submit</button>
-                </form>
+                <script>
+                    // Initialize Flatpickr
+                    flatpickr("#myCalendar", {
+                        enableTime: false, // Set to true if you want to pick both date and time
+                        dateFormat: "Y-m-d", // Format of the date
+                        minDate: "today", // Set minimum date to today
+                        maxDate: "2024-12-31", // Set maximum selectable date
+                        inline: true
+                    });
+                </script>
+
             </div>
             <div class="report">
                 <h4>Report</h4>
-                <table class="report_profiles">
-                    <tr>
-                        <td class="report_profile_img"><img src="resources/profile.png"></td>
-                        <td class="report_profile_img"><img src="resources/profile.png"></td>
-                        <td class="report_profile_img"><img src="resources/profile.png"></td>
-                        <td class="report_profile_img"><img src="resources/profile.png"></td>
-                        <td class="report_profile_img"><img src="resources/profile.png"></td>
-                    </tr>
-                </table>
-                <div></div>
+                <div class="report_elements">
+                    <div class="profile_picker" style="display: flex;">
+                        <button style="border: none; background-color: transparent; cursor: pointer;">
+                            <img src="resources/profile1.png" alt="profile picture">
+                        </button>
+                        <button style="border: none; background-color: transparent; cursor: pointer;">
+                            <img src="resources/profile2.png" alt="profile picture">
+                        </button>
+                        <button style="border: none; background-color: transparent; cursor: pointer;">
+                            <img src="resources/profile3.png" alt="profile picture">
+                        </button>
+                        <button style="border: none; background-color: transparent; cursor: pointer;">
+                            <img src="resources/profile4.png" alt="profile picture">
+                        </button>
+                        <button style="border: none; background-color: transparent; cursor: pointer;">
+                            <img src="resources/profile5.png" alt="profile picture">
+                        </button>
+                    </div>
+                    <div class="report_info">
+                        <p>Sample Texts: </p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="right_content">
@@ -98,7 +139,8 @@
     </div>
 
     <div class="footer">
-        <p><a href="">Privacy Policy</a> | Copyright © 2024 GIRLYPOPS | <a>Terms and Conditions</a></p>
+        <p style="font-size: 15px;"><a href="">Privacy Policy</a> | Copyright © 2024 GIRLYPOPS | <a href="">Terms and
+                Conditions</a></p>
     </div>
 </body>
 
