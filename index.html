@@ -32,15 +32,17 @@
                         <source src="resources/expresso.mp3" type="audio/mpeg">
                     </audio>
                     <p>Expresso - Sabrina Carpenter</p>
-                    <img id="sound_animated" src="" style="height: 30px; width:auto; margin-left: 10px; margin-top: 13px">
+                    <img id="sound_animated" src=""
+                        style="height: 30px; width:auto; margin-left: 10px; margin-top: 13px">
                 </div>
                 <hr style="border: 0.5px solid black; width: 80%; margin: 20px 0;">
                 <p><b>Queue:</b></p>
                 <ol id="songList" style="list-style: none;">
                     <li style="color:grey">Reckless - Madison Beer</li>
                     <li style="color:grey">Dandelion - Ruth B.</li>
-                    <li id="expandList" style="color:grey; cursor: pointer;"><a href="javascript:void(0);">more...</a></li>
-                </ol>                
+                    <li id="expandList" style="color:grey; cursor: pointer;"><a href="javascript:void(0);">more...</a>
+                    </li>
+                </ol>
             </div>
             <div class="scheduler">
                 <h4>Scheduler</h4>
@@ -125,7 +127,9 @@
                         </button>
                     </div>
                     <div class="report_info">
-                        <p>Sample Texts: </p>
+                        <div id="chart"></div>
+                        <script src="https://d3js.org/d3.v7.min.js"></script>
+                        <script src="script.js"></script>
                     </div>
                 </div>
             </div>
