@@ -19,7 +19,7 @@ This is the frontend for the Radio Station Management Software. It enables the m
 
 ## Usage
 
-1. Clone the repository:  
-   `git clone https://github.com/yourusername/radio-station-frontend.git`
+1. Clone the repository:  https://github.com/StoicNeutron/SWE432.git
+   `git clone https://github.com/StoicNeutron/SWE432.git`
 
 2. Open `index.html` in your browser or use a local server.
