@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
 const data = [10, 120, 30, 50, 100];
 
 // Set up the SVG container
-const svgWidth = 500;
-const svgHeight = 500;
+const svgWidth = 300;
+const svgHeight = 300;
 const radius = Math.min(svgWidth, svgHeight) / 2;
 
 // Create SVG element
